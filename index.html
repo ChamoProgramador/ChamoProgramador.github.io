@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Adopta un Amigo | Encuentra tu mascota ideal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon opcional -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/paw.png">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🐾 Adopta un Amigo</h1>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mascotas">Mascotas</a></li>
+                <li><a href="#como-adoptar">Cómo adoptar</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Ellos solo esperan un hogar ❤️</h2>
+                <p>Adoptar no es comprar, es salvar una vida. Dale una segunda oportunidad a un animal que te dará amor incondicional.</p>
+                <a href="#mascotas" class="btn btn-primary">Conoce a nuestros peludos</a>
+            </div>
+        </section>
+
+        <!-- Sección de mascotas -->
+        <section id="mascotas" class="mascotas">
+            <h2>🐕 🐱 Mascotas en adopción</h2>
+            <div class="filtros">
+                <button class="filtro-btn active" data-tipo="todos">Todos</button>
+                <button class="filtro-btn" data-tipo="perro">Perros 🐕</button>
+                <button class="filtro-btn" data-tipo="gato">Gatos 🐱</button>
+            </div>
+            <div class="grid-mascotas" id="grid-mascotas">
+                <!-- Las mascotas se cargarán con JavaScript -->
+                <div class="loading">Cargando mascotas...</div>
+            </div>
+        </section>
+
+        <!-- Sección de pasos para adoptar -->
+        <section id="como-adoptar" class="como-adoptar">
+            <h2>📝 ¿Cómo adoptar?</h2>
+            <div class="pasos-container">
+                <div class="paso">
+                    <div class="paso-icon">1️⃣</div>
+                    <h3>Elige tu compañero</h3>
+                    <p>Conoce a nuestras mascotas disponibles y elige la que más conecte contigo</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-icon">2️⃣</div>
+                    <h3>Completa el formulario</h3>
+                    <p>Llena la solicitud de adopción con tus datos personales</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-icon">3️⃣</div>
+                    <h3>Entrevista y visita</h3>
+                    <p>Te contactaremos para conocerte mejor y visitar al animal</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-icon">4️⃣</div>
+                    <h3>¡Lleva tu nuevo amigo a casa!</h3>
+                    <p>Firma el compromiso de adopción y disfruta de su amor incondicional</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de requisitos -->
+        <section class="requisitos">
+            <h2>✅ Requisitos para adoptar</h2>
+            <div class="requisitos-grid">
+                <div class="requisito">
+                    <span>🏠</span>
+                    <p>Tener espacio adecuado para la mascota</p>
+                </div>
+                <div class="requisito">
+                    <span>💰</span>
+                    <p>Contar con los recursos para alimentación y cuidados veterinarios</p>
+                </div>
+                <div class="requisito">
+                    <span>⏰</span>
+                    <p>Tiempo disponible para dedicarle</p>
+                </div>
+                <div class="requisito">
+                    <span>❤️</span>
+                    <p>Compromiso de por vida</p>
+                </div>
+                <div class="requisito">
+                    <span>📋</span>
+                    <p>Ser mayor de edad</p>
+                </div>
+                <div class="requisito">
+                    <span>🏡</span>
+                    <p>Vivienda estable (propia o con permiso)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto / formulario -->
+        <section id="contacto" class="contacto">
+            <h2>📋 Solicita más información</h2>
+            <p class="contacto-desc">Completa el formulario y nos pondremos en contacto contigo para iniciar el proceso de adopción</p>
+            <form id="form-adopcion">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono / WhatsApp</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mascota">Mascota que te interesa *</label>
+                    <select id="mascota" name="mascota" required>
+                        <option value="">Selecciona una mascota</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="motivo">¿Por qué quieres adoptar? *</label>
+                    <textarea id="motivo" name="motivo" placeholder="Cuéntanos por qué quieres adoptar y qué tipo de hogar le ofrecerías..." rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experiencia">¿Has tenido mascotas antes?</label>
+                    <select id="experiencia" name="experiencia">
+                        <option value="">Selecciona una opción</option>
+                        <option value="si">Sí, actualmente tengo</option>
+                        <option value="tuve">Sí, tuve anteriormente</option>
+                        <option value="no">No, sería mi primera mascota</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large">Enviar solicitud de adopción 🐾</button>
+            </form>
+            <div id="form-mensaje" class="form-mensaje"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐾 Adopta un Amigo</h3>
+                <p>Un hogar para cada peludo</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📧 adopta@amigo.com</p>
+                <p>📞 +56 9 1234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <p>📷 Instagram | 👍 Facebook</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Adopta un Amigo - Todos los derechos reservados</p>
+            <p>🐕 Adopta, no compres</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
