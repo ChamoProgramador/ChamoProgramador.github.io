@@ -1,0 +1,480 @@
+/* styles.css - Versión con logo AdoptMe + cola de perro */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fef9f9;
+}
+
+/* Header y navegación */
+header {
+    background: #ff6b6b;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO con cola de perro */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.logo-text {
+    display: inline-block;
+    position: relative;
+}
+
+.tail-letter {
+    position: relative;
+}
+
+/* Cola de perro usando emoji */
+.e-with-tail::after {
+    content: "🐕";
+    position: absolute;
+    font-size: 1.3rem;
+    margin-left: 2px;
+    transform: rotate(15deg);
+    top: -4px;
+    right: -20px;
+}
+
+/* Alternativa: cola dibujada con CSS (descomentar si se prefiere) */
+/*
+.e-with-tail::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    top: 4px;
+    right: -16px;
+}
+*/
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Menú hamburguesa para móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    text-align: center;
+    padding: 120px 20px 80px;
+    margin-top: 60px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #ff6b6b;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: white;
+    color: #ff6b6b;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-large {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+}
+
+/* Sección mascotas */
+.mascotas {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mascotas h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ff6b6b;
+}
+
+.filtros {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #ff6b6b;
+    background: transparent;
+    color: #ff6b6b;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.filtro-btn.active,
+.filtro-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.grid-mascotas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.tarjeta-content {
+    padding: 1.5rem;
+}
+
+.tarjeta h3 {
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.tarjeta p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.tarjeta .btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    background: #ff6b6b;
+    color: white;
+}
+
+.tarjeta .btn:hover {
+    background: #ff5252;
+}
+
+/* Cómo adoptar */
+.como-adoptar {
+    background: #fff5f5;
+    padding: 60px 5%;
+}
+
+.como-adoptar h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #ff6b6b;
+}
+
+.pasos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paso {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.paso:hover {
+    transform: translateY(-5px);
+}
+
+.paso-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.paso h3 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+/* Requisitos */
+.requisitos {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.requisitos h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #ff6b6b;
+}
+
+.requisitos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.requisito {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s;
+}
+
+.requisito span {
+    font-size: 2rem;
+}
+
+.requisito p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Contacto / Formulario */
+.contacto {
+    padding: 60px 5%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contacto h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+.contacto-desc {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+.form-mensaje {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    background: #1a2a36;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #ff6b6b;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .grid-mascotas {
+        grid-template-columns: 1fr;
+    }
+    
+    .pasos-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .requisitos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+
+    /* Ajuste de logo en móvil */
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    .e-with-tail::after {
+        font-size: 1rem;
+        top: -2px;
+        right: -16px;
+    }
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+}
